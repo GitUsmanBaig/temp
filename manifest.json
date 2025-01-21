@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Price Highlighter",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "content_scripts": [
+      {
+          "matches": ["*://*.amazon.com/*", "*://*.daraz.pk/*"],
+          "js": ["content.js"]
+      }
+  ],
+  "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+          "16": "images/image.png"
+      }
+  },
+  "icons": {
+      "16": "images/image.png"
+  }
+}
